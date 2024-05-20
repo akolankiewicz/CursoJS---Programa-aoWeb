@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <style>
+        /* apenas para facilitar a visualização */
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Aprendendo JS</h1>
+<p id="texto"></p>
+<p id="texto1"></p>
+<button id="texto2" onclick="hello()">Clique em mim</button>
+<p id="texto3"></p>
+<p id="texto4"></p>
+<button onclick="qndoClica()">Clique para ver o que o botão faz</button>
+<button onclick="corFundo()">Clique e deixe o fundo Azul</button> <br><br><br>
+<button ondblclick="cliqueDuplo()">Clique 2x</button>
+<br><br>
+<div id="div1" onmousemove="adicionaTexto()" onmouseout="voltaAzul()" onmouseover="viraVermelho()" style="margin: auto auto; width: 50%; height: 50px; background: blue;">Div que muda cor</div>
+<br>
+<input style="width: 20%; height: 30px;" type="text" id="campoTexto" onfocus='limpaTexto()' value="Foque para mudar o texto">
+
+
+<p>
+    <script>
+        document.write('escrito com document.write');
+        function qndoClica(){
+            alert("Botão foi clicado e disparou essa função");
+        }
+        function corFundo(){
+            document.body.style.backgroundColor = 'royalblue';
+        }
+        function cliqueDuplo(){
+            alert("você deu um click duplo neste botão.");
+        }
+        function viraVermelho(){
+            let div1 = document.getElementById('div1')
+            div1.style.backgroundColor = 'red';
+        }
+        function voltaAzul(){
+            let div1 = document.getElementById('div1')
+            div1.style.backgroundColor = 'blue';
+        }
+        function adicionaTexto(){
+            let div1 = document.getElementById('div1');
+            div1.append('O mouse moveu dentro dessa div ');
+            //tomar cuidado mousemove mt sensivel dispara mt
+        }
+        function limpaTexto(){
+            document.getElementById('campoTexto').value = "";
+        }
+    </script>
+</p>
+
+
+<!-- linkando o script com o html -->
+<script src="js/funcoes.js"></script>
+</body>
+</html>
